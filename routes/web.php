@@ -28,3 +28,4 @@ Route::get('/wishlist', [UserController::class, 'wishlist']);
 Route::get('/login', [UserController::class, 'login']);
 Route::get('/contact', [UserController::class, 'contact']);
 Route::get('/register', [UserController::class, 'register']);
+Route::post('/registerSubmit', [UserController::class, 'registerSubmit'])->name('registerSubmit');

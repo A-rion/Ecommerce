@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use DB;
+
 class UserController extends Controller
 {
     public function home(){
@@ -37,5 +39,29 @@ class UserController extends Controller
 	}
 	public function register(){
 		return view('register.register');
+	}
+
+	public function registerSubmit(Request $request){
+		$userFname = $request->input('userFname');
+		$userLname = $request->input('userLname');
+		$userEmail = $request->input('userEmail');
+		$userPhone = $request->input('userPhone');
+		$userPassword = $request->input('userPassword');
+		$retypePassword = $request->input('retypePassword');
+		// echo $userFname;
+		if($userPassword === $retypePassword) {
+			$insertSQL = DB::table('user')->insert([
+				"fname" => $userFname,
+				"lname" => $userLname,
+				"email"=> $userEmail,
+				"mobile"=> $userPhone,
+				"password"=> $userPassword,
+			]);
+			if($insertSQL){
+				echo "Account Successfully Created.";
+			}
+		} else {
+			echo "Passwords Do Not Match.";
+		}
 	}
 }

@@ -59,10 +59,9 @@
                             <a href="/checkout" class="nav-item nav-link @php if(Request::segment(1)=='checkout'){echo 'active'; } @endphp">Checkout</a>
                             <a href="/myaccount" class="nav-item nav-link @php if(Request::segment(1)=='myaccount'){echo 'active'; } @endphp">My Account</a>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle {{request() -> is('wishlist', 'login', 'contact') ? 'active' : ''}}" data-toggle="dropdown">More Pages</a>
+                                <a href="#" class="nav-link dropdown-toggle {{request() -> is('wishlist', 'contact') ? 'active' : ''}}" data-toggle="dropdown">More Pages</a>
                                 <div class="dropdown-menu">
                                     <a href="/wishlist" class="dropdown-item @php if(Request::segment(1)=='wishlist'){echo 'active'; } @endphp">Wishlist</a>
-                                    <a href="/login" class="dropdown-item @php if(Request::segment(1)=='login'){echo 'active'; } @endphp">Login & Register</a>
                                     <a href="/contact" class="dropdown-item @php if(Request::segment(1)=='conatct'){echo 'active'; } @endphp">Contact Us</a>
                                 </div>
                             </div>
@@ -81,3 +80,37 @@
             </div>
         </div>
         <!-- Nav Bar End -->   
+
+        <!-- Bottom Bar Start -->
+        <div class="bottom-bar">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="img/logo.png" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="search">
+                            <input type="text" placeholder="Search">
+                            <button><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="user">
+                            <a href="/wishlist" class="btn wishlist">
+                                <i class="fa fa-heart"></i>
+                                <span>(0)</span>
+                            </a>
+                            <a href="/cart" class="btn cart">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span>(0)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Bar End --> 
