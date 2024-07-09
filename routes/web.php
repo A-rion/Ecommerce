@@ -26,7 +26,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', [LoginController::class, 'index']);
 Route::get('/home', [UserController::class, 'home']);
 Route::get('/productlist', [UserController::class, 'productlist']);
 Route::get('/productdetail', [UserController::class, 'productdetail']);
@@ -35,10 +34,4 @@ Route::get('/checkout', [UserController::class, 'checkout']);
 Route::get('/myaccount', [UserController::class, 'myaccount']);
 Route::get('/wishlist', [UserController::class, 'wishlist']);
 Route::get('/login', [UserController::class, 'login']);
-Route::get('/cart', [CartController::class, 'index']);
-Route::get('/productlist', [ProductListController::class, 'index']);
-Route::get('/checkout', [CheckoutController::class, 'index']);
-Route::get('/contact', [ContactController::class, 'index']);
-Route::get('/myaccount', [MyaccountController::class, 'index']);
-Route::get('/productdetail', [ProductdetailController::class, 'index']);
-Route::get('/wishlist', [WishlistController::class, 'index']);
+Route::get('/contact', [UserController::class, 'contact']);

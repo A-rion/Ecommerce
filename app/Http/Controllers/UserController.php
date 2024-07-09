@@ -32,4 +32,7 @@ class UserController extends Controller
 	public function login(){
 		return view('login.login');
 	}
+	public function contact(){
+		return view('contact.contact');
+	}
 }
