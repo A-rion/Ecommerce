@@ -71,8 +71,8 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
                                 <div class="dropdown-menu">
-                                    <a href="/login" class="dropdown-item">Login</a>
-                                    <a href="#" class="dropdown-item">Register</a>
+                                    <a href="/login" class="dropdown-item @php if(Request::segment(1)=='login'){echo 'active'; } @endphp">Login</a>
+                                    <a href="/register" class="dropdown-item @php if(Request::segment(1)=='register'){echo 'active'; } @endphp">Register</a>
                                 </div>
                             </div>
                         </div>

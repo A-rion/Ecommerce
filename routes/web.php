@@ -2,14 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\ProductListController;
-use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\MyaccountController;
-use App\Http\Controllers\ProductdetailController;
-use App\Http\Controllers\WishlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +27,4 @@ Route::get('/myaccount', [UserController::class, 'myaccount']);
 Route::get('/wishlist', [UserController::class, 'wishlist']);
 Route::get('/login', [UserController::class, 'login']);
 Route::get('/contact', [UserController::class, 'contact']);
+Route::get('/register', [UserController::class, 'register']);
