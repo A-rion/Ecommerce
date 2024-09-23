@@ -9,9 +9,9 @@ use DB;
 class UserController extends Controller
 {
     public function home(){
-		
+
 		return view('home.home');
-		
+
 	}
 	public function productlist(){
 		return view('productlist.productlist');

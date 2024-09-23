@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\adminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,6 @@ Route::get('/login', [UserController::class, 'login']);
 Route::get('/contact', [UserController::class, 'contact']);
 Route::get('/register', [UserController::class, 'register']);
 Route::post('/registerSubmit', [UserController::class, 'registerSubmit'])->name('registerSubmit');
+
+// Admin DashBoard
+Route::get('/dashboard', [adminController::class, 'adminDash']);
