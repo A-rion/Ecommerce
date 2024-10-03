@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\adminController;
+use App\Http\Middleware\loginAuth;
+use App\Http\Middleware\roleAuth;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +34,8 @@ Route::get('/register', [UserController::class, 'register']);
 Route::post('/registerSubmit', [UserController::class, 'registerSubmit'])->name('registerSubmit');
 
 // Admin DashBoard
-Route::get('/dashboard', [adminController::class, 'adminDash']);
+Route::get('/dashboard', [adminController::class, 'adminDash'])->middleware(roleAuth::class, loginAuth::class)->name('dashboard');
+Route::get('/adminregister', [adminController::class, 'adminRegister'])->name('adminRegister');
+Route::get('/adminlogin', [adminController::class, 'adminLogin'])->name('adminLogin');
+Route::post('/registerInput', [adminController::class, 'registerInput'])->name('registerInput');
+Route::post('/loginInput', [adminController::class, 'loginInput'])->name('loginInput');
